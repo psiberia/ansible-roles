@@ -1,0 +1,6 @@
+---
+- name: Run this on OSX type systems
+  become: yes
+  become_user: "{{ lookup('env','USER') }}"
+  import_tasks: ./macos/main.yml
+  when: ansible_distribution == 'MacOSX'
